@@ -10,7 +10,6 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import MapScreen from './screens/MapScreen';
 
-
 export default function App() {
   const stack = createStackNavigator();
 
@@ -36,8 +35,7 @@ export default function App() {
                 name='MapScreen'
                 component={MapScreen}
                 options={{
-                  headerShown: false,
-
+                headerShown: false,
                 }}
               />
             </stack.Navigator>
@@ -45,9 +43,7 @@ export default function App() {
         </SafeAreaProvider>
       }</NavigationContainer>
       
-    
     </Provider>
-  
   );
 }
 
