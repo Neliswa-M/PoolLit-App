@@ -24,10 +24,13 @@ const data = [
     },
 ];
 
+// set navigation options
 const NavOptions = () => {
     const navigation = useNavigation();
     const origin = useSelector(selectOrigin);
 
+    // use FlatList to display scrollable lis
+    // use TouchableOpacity 
     return (
         <FlatList
          data={data}
