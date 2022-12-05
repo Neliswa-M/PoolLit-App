@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import MapView, { Marker } from 'react-native-maps';
 import twrnc from 'tailwind-react-native-classnames';
-//import { setDestination, setOrigin } from '../slices/navSlice';
 import { selectDestination, selectOrigin } from '../slices/navSlice';
 import { useSelector } from 'react-redux';
 import MapViewDirections from 'react-native-maps-directions';
@@ -63,12 +62,15 @@ const Map = () => {
           origin={origin.description}
           destination={destination.description}
           //apikey={GOOGLE_MAPS_APIKEY}
+          // hardcode API Key
           apikey='AIzaSyCz_l6Rs2NyfHOkS1PahXMryqizzwfZxDo'
           strokeWidth={3}
           strokeColor="black"
 
         />
     )}
+      // set markers (red pins on map) for 
+      // both the pick up and drop off location
       {origin?.location && (
         <Marker
             coordinate={{
