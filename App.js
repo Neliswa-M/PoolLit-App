@@ -16,7 +16,14 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>{
+        //use SafeAreaProvider to ensure components do
+        //not fall outside of the boarders of the screen
         <SafeAreaProvider>
+          /*
+            used to ensure that the screen shifts up
+            and down as needed when keyboard is used,
+            catering for both ios and android devices
+           */
           <KeyboardAvoidingView 
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={{flex: 1 }}
