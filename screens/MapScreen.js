@@ -7,8 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import NavigateCard from "../components/NavigateCard";
 import RideOptionsCard from "../components/RideOptionsCard";
 
-
 const MapScreen = () => {
+    // enable navigation from one screen to another
     const Stack = createStackNavigator();
     return (
         <View>
@@ -26,6 +26,7 @@ const MapScreen = () => {
                             headerShown: false,
                         }}
                     />
+                    // navigate to RideOptionsCard screen
                     <Stack.Screen
                         name="RideOptionsCard"
                         component={RideOptionsCard}
