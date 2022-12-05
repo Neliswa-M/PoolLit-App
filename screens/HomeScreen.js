@@ -37,9 +37,12 @@ const HomeScreen = () => {
               fontSize: 18,
             },
           }}
+          //on click
           onPress={(data, details = null) =>{
             /*console.log(data);
             console.log(details);*/
+            
+            //set the pick up location
             dispatch(setOrigin({
               location: details.geometry.location,
               description: data.description
@@ -47,15 +50,21 @@ const HomeScreen = () => {
 
             dispatch(setDestination(null));
           }}
+          // get lcation details
           fetchDetails={true}
           returnKeyType={"search"}
+          // removed the 'PoweredByGoggle' banner on APIs
           enablePoweredByContainer={false}
+          // number of characters needed to be typed in 
+          // search bar before suggestions start popping up
           minLength={2}
           query={{
             //key: GOOGLE_MAPS_APIKEY,
+            // hardcode API key because env file throws an error
             key: 'AIzaSyCz_l6Rs2NyfHOkS1PahXMryqizzwfZxDo',
             language: 'en',
           }}
+          //allow 400ms after typing before suggestions pop
           nearbyPlacesAPI='GooglePlacesSearch'
           debounce={400}
         />
